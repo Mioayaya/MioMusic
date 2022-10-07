@@ -1,5 +1,6 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 import MioWebContent from './cmps/content';
+import MioWebSideBar from './cmps/side-bar';
 
 import { MioWebDiv } from './styles'
 
@@ -8,9 +9,11 @@ const MioWeb : FC = () => {
     <MioWebDiv>
       <div className="wrap">
         <div className="top"></div>                
-        <MioWebContent />        
+        <MioWebContent />
         <div className="bottom"></div>
-      </div>      
+      </div>
+      
+      <MioWebSideBar />
     </MioWebDiv>
   )
 }
