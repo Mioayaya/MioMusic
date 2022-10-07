@@ -1,14 +1,17 @@
 import { FC, useEffect, useMemo, useState } from 'react';
+import MioWebContent from './cmps/content';
 
-interface Props  {
+import { MioWebDiv } from './styles'
 
-}
-
-const MioWeb : FC<Props> = () => {
+const MioWeb : FC = () => {
   return (
-    <div>
-      我是pc端
-    </div>
+    <MioWebDiv>
+      <div className="wrap">
+        <div className="top"></div>                
+        <MioWebContent />        
+        <div className="bottom"></div>
+      </div>      
+    </MioWebDiv>
   )
 }
 

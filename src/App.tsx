@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react'
-import MioCmNotFound from './components/404';
+
 import { assessPage } from './utils'
+
+import MioCmNotFound from './components/404';
+import MioCmPageLoading from './components/loading/page-loading';
+import MioMobile from './page-mobile';
+import MioWeb from './page-web';
 
 function App() {  
   const [ pageType,setPageType ] = useState<boolean>(true);
@@ -13,10 +18,9 @@ function App() {
     <div className="App">
       {
         pageType 
-        ? "pc端"
-        : "手机端"
-      }      
-      <MioCmNotFound />      
+        ? <MioWeb />
+        : <MioMobile />
+      }
     </div>
   )
 }
