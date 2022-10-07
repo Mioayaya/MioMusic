@@ -1,24 +1,22 @@
 import { useEffect, useState } from 'react'
+import MioCmNotFound from './components/404';
+import { assessPage } from './utils'
 
 function App() {  
+  const [ pageType,setPageType ] = useState<boolean>(true);
 
   useEffect(() => {
-    assessPage();
+    setPageType(assessPage.assessPage());
   },[])
 
-  // methods
-  const assessPage = ():void => {
-    const ua = window.navigator.userAgent.toLocaleLowerCase();
-    const reg = /iphone|android|symbianos|windows\sphone/g;
-    if(reg.test(ua)) {
-      console.log('手机打开');
-    }else {
-      console.log('pc打开');      
-    }    
-  }
-
   return (
-    <div className="App">      
+    <div className="App">
+      {
+        pageType 
+        ? "pc端"
+        : "手机端"
+      }      
+      <MioCmNotFound />      
     </div>
   )
 }
