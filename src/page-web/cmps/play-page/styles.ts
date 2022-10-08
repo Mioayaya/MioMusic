@@ -11,5 +11,6 @@ export const MioWebPlayPageDiv = styled.div<Iprops>`
   height: ${props => props.showPlay?'100%':'0'};
   transition: 1s;
   bottom: 0;
+  border-radius: 15px;
   overflow:hidden;
 ` 

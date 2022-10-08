@@ -21,23 +21,33 @@ const MioWeb : FC = () => {
     }
   },[showPlay])
 
-  // methods
+  // loaddata
+
+  // methods (object -- methods)
   const setpPromise = new Promise((reslove,reject) => {    
     setTimeout(reslove,1000,'done');    
   });
 
   // footer false then play true
   const toShowPlay = async () => {
-    setStep([false,false]);
-    const res = await setpPromise;
-    setStep([false,true]);
+    try {
+      setStep([false,false]);
+      await setpPromise;
+      setStep([false,true]);
+    }catch(err) {
+      console.log(err);      
+    }
   }
 
   // play false then footer true
   const toUnShowPlay = async () => {
-    setStep([false,false]);
-    const res = await setpPromise;
-    setStep([true,false]);
+    try {
+      setStep([false,false]);
+      await setpPromise;
+      setStep([true,false]);
+    }catch(err) {
+      console.log(err);
+    }
   }
   
   return (
