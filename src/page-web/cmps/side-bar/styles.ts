@@ -11,5 +11,5 @@ export const MioWebSideBarDiv = styled.div<Iprops>`
   width: ${props => props.show?'350px':'0.5px'};
   height: 100%;
   background-color: black;
-  transition: 1s;
+  transition: 0.5s;
 `

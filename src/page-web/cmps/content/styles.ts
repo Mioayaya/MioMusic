@@ -1,13 +1,20 @@
 import styled from "@emotion/styled";
 
-export const MioWebContentDiv = styled.div`
+interface Iprops {
+  showMenu: boolean;
+}
+
+export const MioWebContentDiv = styled.div<Iprops>`
   flex: 1;
   display: flex;
+  position: relative;
   .left {
-    width: 250px;
+    width: ${props => props.showMenu?'250px':'0'};
+    background-color: blanchedalmond;
+    transition: 1s;
   }
   .right {
-    flex: 3;
+    flex: 1;
     background-color: aliceblue;
   }
 `

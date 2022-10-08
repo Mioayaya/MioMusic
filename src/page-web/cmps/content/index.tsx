@@ -5,15 +5,19 @@ import { routes } from '../../../router';
 
 import { MioWebContentDiv } from './styles';
 
-interface Props  {
-
+interface IProps  {
+  showMenu: boolean;
+  showPlay: boolean;
+  setShowPlay: Function;
 }
 
-const MioWebContent : FC<Props> = () => {
+const MioWebContent : FC<IProps> = (props) => {
+  const { showMenu,showPlay,setShowPlay } = props;
+
   return (
-    <MioWebContentDiv>
-      <div className="left"></div>
-      <div className="right">{useRoutes(routes)}</div>
+    <MioWebContentDiv showMenu={showMenu}>
+      <div className="left">{showMenu?'true':'false'}</div>
+      <div className="right">{useRoutes(routes)}</div>      
     </MioWebContentDiv>
   )
 }
