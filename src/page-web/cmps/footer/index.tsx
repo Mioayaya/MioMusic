@@ -11,7 +11,6 @@ const MioWebFooter : FC<Iprops> = (props) => {
   const { setShowPlay,showPlay } = props;
 
   const audioContext:AudioContext = new window.AudioContext;
-  console.log(audioContext);
   
   return (
     <MioWebFooterDiv showPlay={showPlay}>
