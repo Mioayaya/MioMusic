@@ -3,7 +3,7 @@
 
 # font 字体颜色
 
-|变量|含义|色值|
+|变量|含义|色值(dark)|
 |-----|-----|-----|
 |light|最亮(与配色区别)|#ffffff|
 |title|标题|#d0d0d0|
@@ -17,6 +17,9 @@
 |iconHover|图标hover|#ffffff|
 |message|主题颜色|#c33a3b|
 |search|搜索内容匹配|#428ada|
+|searchTxt|搜索输入文字|#ffffff|
+|searchIconHover|搜索图标hover|#b3b3b4|
+|searchHolder|搜索holder|#656568|
 |searchTip|搜索提示|#666668|
 |link|链接&按钮|#85b9e6|
 |linkHover|链接hover|#b3cee5|
@@ -35,7 +38,7 @@
 |变量|含义|色值|
 |-----|-----|-----|
 |headerFooter|顶部底部背景色|#222225|
-||||
+|search|搜索栏背景颜色|rgba(255, 255, 255, 0.07)|
 ||||
 ||||
 ||||

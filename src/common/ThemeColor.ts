@@ -13,6 +13,9 @@ const ThemeColor = {
       iconHover:'#ffffff',
       message:'#c33a3b',
       search:'#428ada',
+      searchTxt: '#ffffff',
+      searchIconHover: '#b3b3b4',
+      searchHolder: '#656568',
       searchTip:'#666668',
       link:'#85b9e6',
       linkHover:'#b3cee5',
@@ -24,7 +27,7 @@ const ThemeColor = {
     },
     public: {
       headerFooter: '#222225',
-
+      search: 'rgba(255, 255, 255, 0.07)',
     },
     header: {
       

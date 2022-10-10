@@ -2,11 +2,11 @@ import { FC, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import MioCMIcon from '../../../components/icon';
 
 import { store } from '../../../type';
-import MioCmSearchBar from '../search-bar';
 import { MioWebHeaderDiv } from "./styles"
+import MioCMIcon from '../../../components/icon';
+import MioCmSearchBar from '../search-bar';
 
 interface Iprops {
   setShowMenu: Function;
@@ -31,12 +31,18 @@ const MioWebHeader:FC<Iprops> = (props) => {
         <NavLink to='/home'>
           <h2 className="title">MioMusic</h2>
         </NavLink>
+        
         <MioCmSearchBar />
       </div>
 
       <div className="middle">中间</div>
 
-      <div className="right">右侧</div>
+      <div className="right">
+        <div className="btns">
+          <div className="last-page">{'<'}</div>
+          <div className="next-page">{'>'}</div>
+        </div>
+      </div>
       
     </MioWebHeaderDiv>
   )

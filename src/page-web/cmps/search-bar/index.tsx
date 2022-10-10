@@ -3,6 +3,8 @@ import { ChangeEvent, FormEvent } from 'react'
 
 import { MioCmSearchBarDiv } from './styles'
 import MioCMIcon from '../../../components/icon'
+import { useSelector } from 'react-redux'
+import { store } from '../../../type'
 
 interface Iprops {
   width?: number
@@ -11,6 +13,7 @@ interface Iprops {
 const MioCmSearchBar:FC<Iprops> = memo((props) => {
   const { width } = props;
   const [ searchTxt,setSearchTxt ] = useState<string>('');
+  const THEME = useSelector<store.state,string>(state => state.themeSlice.theme);
 
   /* methods */
 
@@ -33,7 +36,7 @@ const MioCmSearchBar:FC<Iprops> = memo((props) => {
   }
 
   return (
-    <MioCmSearchBarDiv width={width}>
+    <MioCmSearchBarDiv width={width} theme={THEME}>
       <MioCMIcon iconName='#icon-sousuo1'/>
       <form action="" onSubmit={e => searchSubmit(e)}>
         <input type="search"

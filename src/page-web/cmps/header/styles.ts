@@ -38,15 +38,31 @@ export const MioWebHeaderDiv = styled.div<Iprops>`
       }
     }
     .title {
-      margin-right: 20px;
+      margin-right: 45px;
       color: ${p => ThemeColor[p.theme].font.light};
-    }
+    }    
   }
   
   .middle {
     flex: 1;
     color: #fff;
     display: flex;
-    justify-content: center;    
+  }
+
+  .right {
+    .btns {
+      width: 58px;
+      display: flex;
+      justify-content: space-between;
+      .last-page,.next-page {
+        color: #fff;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        background-color: red;
+        border-radius: 50%;
+      }
+    }
   }
 `
