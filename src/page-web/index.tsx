@@ -1,5 +1,6 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 
+import '../assets/css/common.css'
 import { MioWebDiv } from './styles'
 import MioWebContent from './cmps/content';
 import MioWebFooter from './cmps/footer';

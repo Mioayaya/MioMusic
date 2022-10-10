@@ -1,5 +1,13 @@
 # design
 
+# 一些颜色网站
+- https://zhuanlan.zhihu.com/p/69597232?utm_source=qq
+- https://color.adobe.com/zh/create/color-wheel/
+- https://materialui.co/
+- https://www.palettable.io/A0918A
+- https://www.webdesignrankings.com/resources/lolcolors/
+
+
 # 项目流程
 - app.tsx -> 判断 true?pc端:手机端
 - router -> 判断  true?pc端:手机端 没有组件渲染 404组件
