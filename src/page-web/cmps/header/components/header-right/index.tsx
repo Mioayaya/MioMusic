@@ -1,8 +1,11 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { store } from '../../../../../type';
 
+import { AVATAR } from '../../../../../assets/base-img';
+
+import { store } from '../../../../../type';
 import { MioWebHeaderRightDiv } from './styles';
+import MioCMIcon from '../../../../../components/icon';
 
 interface IProps  {
 
@@ -16,12 +19,28 @@ const MioWebHeaderRight:FC<IProps> = () => {
       <div className="btns">
         <div className="last-page">{'<'}</div>
         <div className="next-page">{'>'}</div>
-      </div>
+      </div>      
+                
       {
         IsLogin 
-        ? <div className="avatar">登</div>
-        : <div className="avatar">未</div>
+        ? <div className="avatar">
+            {
+              // src ? img : default
+            }
+            <img src="" alt="" className="img" />
+            <span className="name"></span>
+          </div>
+        : <div className="avatar">
+            <img src={AVATAR} alt="默认头像" className="img" />
+          </div>
       }
+
+      <MioCMIcon iconName="#icon-yifu" />
+      <MioCMIcon iconName="#icon-messages" />
+      <div className="more">
+        <MioCMIcon iconName="#icon-settings" />        
+      </div>
+
       
     </MioWebHeaderRightDiv>
   )

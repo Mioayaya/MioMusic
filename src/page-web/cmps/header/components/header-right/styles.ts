@@ -21,11 +21,27 @@ export const MioWebHeaderRightDiv = styled.div`
     }
   }
 
+  .message {
+
+  }
+
   .avatar {
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    background-color: #eee;
+    /* background-color: #eee; */
     overflow: hidden;
+  }
+
+  .more {
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    color: red;
   }
 `
