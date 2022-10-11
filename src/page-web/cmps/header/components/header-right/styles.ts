@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 
 export const MioWebHeaderRightDiv = styled.div`
+  display: flex;
+  align-items: center;
+  color: #111;
+
   .btns {
     width: 58px;
     display: flex;
@@ -15,5 +19,13 @@ export const MioWebHeaderRightDiv = styled.div`
       background-color: red;
       border-radius: 50%;
     }
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #eee;
+    overflow: hidden;
   }
 `

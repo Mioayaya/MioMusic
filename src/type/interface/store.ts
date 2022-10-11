@@ -1,7 +1,12 @@
-interface themeSlice {
+export interface MthemeSlice {
   theme: string;
 }
 
+export interface MprivateSlice {
+  isLogin: boolean;
+}
+
 export interface state {
-  themeSlice: themeSlice;
+  themeSlice: MthemeSlice;
+  privateSlice: MprivateSlice;
 }
