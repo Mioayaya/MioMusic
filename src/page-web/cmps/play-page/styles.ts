@@ -13,4 +13,5 @@ export const MioWebPlayPageDiv = styled.div<Iprops>`
   bottom: 0;
   border-radius: 15px;
   overflow:hidden;
+  z-index: 2;
 ` 

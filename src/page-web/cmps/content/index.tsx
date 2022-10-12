@@ -2,6 +2,7 @@ import { FC, useEffect, useMemo, useState } from 'react';
 import { useRoutes } from 'react-router-dom'
 
 import { routes } from '../../../router';
+import MioWebContentLeft from './components/content-left';
 
 import { MioWebContentDiv } from './styles';
 
@@ -16,8 +17,10 @@ const MioWebContent : FC<IProps> = (props) => {
 
   return (
     <MioWebContentDiv showMenu={showMenu}>
-      <div className="left">{showMenu?'true':'false'}</div>
-      <div className="right">{useRoutes(routes)}</div>      
+      <div className="left scroll-bar">
+        <MioWebContentLeft/>
+      </div>
+      <div className="right scroll-bar">{useRoutes(routes)}</div>      
     </MioWebContentDiv>
   )
 }

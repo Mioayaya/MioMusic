@@ -1,10 +1,13 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 
+import { MioWebHomeDiv } from './styles'
+
 const MioWebHome : FC = () => {
+  
   return (
-    <div>
+    <MioWebHomeDiv>
       <h2>homePage</h2>
-    </div>
+    </MioWebHomeDiv>
   )
 }
 

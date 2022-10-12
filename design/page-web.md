@@ -1,8 +1,8 @@
 # pc端页面设计
 
 # 层级
-side-bar>header > content
-99>1 
+side-bar > play-page > header > content
+99       > 2         > 1 
 
 # total 
 - 背景
