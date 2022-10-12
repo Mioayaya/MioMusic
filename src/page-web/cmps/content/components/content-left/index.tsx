@@ -2,14 +2,38 @@ import { FC, useEffect, useMemo, useState } from 'react';
 
 import { MioWebContentLeftDiv } from './styles'
 
-interface IProps  {  
+interface IProps  {
+  theme: string;
 }
 
 const MioWebContentLeft:FC<IProps> = (props) => {
-  const { } = props;
+  const { theme } = props;
   return (
-    <MioWebContentLeftDiv>
+    <MioWebContentLeftDiv theme={theme}>
       menu      
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
+      <p>132</p>
     </MioWebContentLeftDiv>
   )
 }

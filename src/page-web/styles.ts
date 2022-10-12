@@ -12,5 +12,6 @@ export const MioWebDiv = styled.div`
     border-radius: 15px;
     flex-direction: column;    
     position: relative;
+    box-shadow: 0 0 10px 0px #000;
   }
 `

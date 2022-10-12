@@ -19,10 +19,20 @@ export const MioWebHeaderDiv = styled.div<Iprops>`
   white-space:nowrap;
   background-color: ${p => ThemeColor[p.theme].public.headerFooter};
   z-index: 1;
+  position: relative;
   .middle {
     flex: 1;
     color: #fff;
     display: flex;
   }
-
+  ::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: ${p => ThemeColor[p.theme].header.border};    
+  }
 `

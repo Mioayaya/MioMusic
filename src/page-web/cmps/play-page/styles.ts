@@ -1,12 +1,14 @@
 import styled from "@emotion/styled"
+import ThemeColor from "../../../common/ThemeColor";
+import { styles } from "../../../type";
 
-interface Iprops {
+interface Iprops extends styles.MStylesProps {
   showPlay: boolean;
 }
 
 export const MioWebPlayPageDiv = styled.div<Iprops>`
   position: absolute;
-  background-color: red;
+  background-color: ${p => ThemeColor[p.theme].palyPage.background};
   width: 100%;
   height: ${props => props.showPlay?'100%':'0'};
   transition: 1s;

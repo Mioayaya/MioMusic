@@ -30,17 +30,23 @@ const ThemeColor = {
     public: {
       headerFooter: '#222225',
       search: 'rgba(255, 255, 255, 0.07)',
+      scrollBar: '#454545',      
     },
     header: {
-      
+      border: `linear-gradient(to left, #660404 0%,#b42424 50%, #660404 100%)`,
     },
     footer: {
-
+      border: '#3d3d40',
     },
     content: {
-
+      border: '#454545',
+      background: '#2b2b2b',
     },
-    right: {
+    palyPage: {
+      background: '#2b2b2b',
+    },
+    // 右侧栏
+    side: {
 
     }
   },

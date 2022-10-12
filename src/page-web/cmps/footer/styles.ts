@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
+import ThemeColor from "../../../common/ThemeColor";
+import { styles } from "../../../type";
 
-interface Iprops {
+interface Iprops extends styles.MStylesProps{
   showPlay: boolean;
 }
 
@@ -10,7 +12,8 @@ export const MioWebFooterDiv = styled.div<Iprops>`
   height: ${props => props.showPlay?'75px':'0'};
   overflow: hidden;
   transition: 1s;
-  background-color: antiquewhite;
+  background-color: ${p => ThemeColor[p.theme].public.headerFooter};
+  border-top: 1px solid ${p => ThemeColor[p.theme].footer.border};
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 `

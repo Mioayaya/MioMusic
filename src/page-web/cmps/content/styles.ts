@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
+import ThemeColor from "../../../common/ThemeColor";
+import { styles } from "../../../type";
 
-interface Iprops {
+interface Iprops extends styles.MStylesProps {
   showMenu: boolean;
 }
 
@@ -8,19 +10,24 @@ export const MioWebContentDiv = styled.div<Iprops>`
   flex: 1;
   display: flex;
   position: relative;
+  background-color: ${p => ThemeColor[p.theme].content.background};
   .left {
-    width: ${props => props.showMenu?'250px':'0'};
-    background-color: blanchedalmond;
+    width: ${props => props.showMenu?'250px':'0'};    
     transition: 1s;
     overflow-y: scroll;
     overflow-x: hidden;
-    
+    border-right: 1px solid ${p => ThemeColor[p.theme].content.border};
   }
   .right {
-    flex: 1;
-    background-color: aliceblue;
+    flex: 1;    
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+
+  .scroll-bar {
+    ::-webkit-scrollbar-thumb {      
+      background-color: ${p => ThemeColor[p.theme].public.scrollBar};
+    }
   }
 
   .left {    
@@ -30,8 +37,8 @@ export const MioWebContentDiv = styled.div<Iprops>`
     }
     :hover {
       ::-webkit-scrollbar {      
-        width: 0.5rem;
-        height: 0.5rem;
+        width: 8px;
+        height: 8px;
       } 
     }
   }
