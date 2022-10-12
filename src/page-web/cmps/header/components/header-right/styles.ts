@@ -18,16 +18,16 @@ export const MioWebHeaderRightDiv = styled.div<Iprops>`
     user-select: none;
     cursor: pointer;
     .last-page,.next-page {
-      color: #fff;
+      color: ${p => ThemeColor[p.theme].font.btnRoute};
       width: 25px;
       height: 25px;
       line-height: 25px;
       text-align: center;
-      background-color: red;
-      border-radius: 50%;      
-    }
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }    
     .btn-forbid {
-
+      color: ${p => ThemeColor[p.theme].font.btnRouteForbid};
     }
   }
 

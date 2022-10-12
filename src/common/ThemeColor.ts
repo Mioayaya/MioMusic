@@ -24,6 +24,8 @@ const ThemeColor = {
       listMessage:'#909090',
       listMessageHover:'#b4b4b4',
       listEffect:'#5e5e5e',
+      btnRoute: '#c8c8c9',
+      btnRouteForbid: '#5d5d5f'
     },
     public: {
       headerFooter: '#222225',
