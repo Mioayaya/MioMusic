@@ -12,4 +12,5 @@ export const MioWebSideBarDiv = styled.div<Iprops>`
   height: 100%;
   background-color: black;
   transition: 0.5s;
+  z-index: 99;
 `

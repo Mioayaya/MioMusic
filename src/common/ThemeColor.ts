@@ -22,7 +22,7 @@ const ThemeColor = {
       list:'#d3d3d3',
       listHover:'#ffffff',
       listMessage:'#909090',
-      listMessageHover:'~#b4b4b4',
+      listMessageHover:'#b4b4b4',
       listEffect:'#5e5e5e',
     },
     public: {

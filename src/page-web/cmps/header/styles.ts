@@ -18,7 +18,7 @@ export const MioWebHeaderDiv = styled.div<Iprops>`
   padding: 0 10px;
   white-space:nowrap;
   background-color: ${p => ThemeColor[p.theme].public.headerFooter};
-  
+  z-index: 1;
   .middle {
     flex: 1;
     color: #fff;

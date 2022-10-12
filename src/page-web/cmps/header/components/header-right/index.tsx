@@ -8,14 +8,16 @@ import { MioWebHeaderRightDiv } from './styles';
 import MioCMIcon from '../../../../../components/icon';
 
 interface IProps  {
-
+  theme: string;
 }
 
-const MioWebHeaderRight:FC<IProps> = () => {
+const MioWebHeaderRight:FC<IProps> = (props) => {
+  const { theme } = props;
   const IsLogin = useSelector<store.state,boolean>(state => state.privateSlice.isLogin);  
-  
+  const [ avatarHover,setAvatarHover ] = useState<boolean>(false);
+
   return (
-    <MioWebHeaderRightDiv>
+    <MioWebHeaderRightDiv theme={theme} avatarHover={avatarHover}>
       <div className="btns">
         <div className="last-page">{'<'}</div>
         <div className="next-page">{'>'}</div>
@@ -23,25 +25,36 @@ const MioWebHeaderRight:FC<IProps> = () => {
                 
       {
         IsLogin 
-        ? <div className="avatar">
-            {
-              // src ? img : default
-            }
-            <img src="" alt="" className="img" />
-            <span className="name"></span>
-          </div>
-        : <div className="avatar">
-            <img src={AVATAR} alt="默认头像" className="img" />
-          </div>
+        ? <>
+            <div className="avatar avatar-login"
+                 onMouseEnter={() => setAvatarHover(true)}
+                 onMouseLeave={() => setAvatarHover(false)}
+            >
+              {
+                // src ? img : default
+              }
+              <img src={AVATAR} alt="" className="img" />
+            </div>          
+            <span className="name">test</span>
+            <div className="avatar-card"
+                 onMouseEnter={() => setAvatarHover(true)}
+                 onMouseLeave={() => setAvatarHover(false)}
+            >
+              card
+            </div>
+          </>
+        : <>
+            <div className="avatar">
+              <img src={AVATAR} alt="默认头像" className="img" />
+            </div>
+            <span className="name">小路绫</span>
+          </>
       }
-
-      <MioCMIcon iconName="#icon-yifu" />
-      <MioCMIcon iconName="#icon-messages" />
-      <div className="more">
-        <MioCMIcon iconName="#icon-settings" />        
-      </div>
-
       
+      <MioCMIcon iconName="#icon-messages" />   
+      <MioCMIcon iconName="#icon-yifu" />
+      <MioCMIcon iconName="#icon-settings" />
+                  
     </MioWebHeaderRightDiv>
   )
 }

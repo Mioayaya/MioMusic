@@ -4,6 +4,10 @@
   display: inline-block;  
 }
 
+.btn-forbid {
+  cursor: not-allowed;
+}
+
 .icon-wrap {
   width: 25px; 
   height: 25px;

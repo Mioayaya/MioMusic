@@ -26,7 +26,7 @@ const MioWebHeader:FC<Iprops> = (props) => {
 
       <div className="middle">中间</div>
 
-      <MioWebHeaderRight />
+      <MioWebHeaderRight theme={THEME}/>
       
     </MioWebHeaderDiv>
   )
