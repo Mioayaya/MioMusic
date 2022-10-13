@@ -1,6 +1,8 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { HOMEPATH } from '../../../../../server/local-data/page-path';
+
 import { MioWebHeaderLeftDiv } from './styles';
 import MioCMIcon from '../../../../../components/icon';
 import MioCmSearchBar from '../../../search-bar';
@@ -20,12 +22,12 @@ const MioWebHeaderLeft:FC<IProps> = (props) => {
         <MioCMIcon iconName='#icon-menu'/>
       </div>
 
-      <NavLink to='/home'>
+      <NavLink to={HOMEPATH}>
         <div className="logo">
           <div className="img"/>
         </div>
       </NavLink>
-      <NavLink to='/home'>
+      <NavLink to={HOMEPATH}>
         <h2 className="title">MioMusic</h2>
       </NavLink>
       

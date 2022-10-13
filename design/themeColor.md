@@ -28,6 +28,8 @@
 |listMessage|列表歌手专辑等|#909090|
 |listMessageHover|~hover|#b4b4b4|
 |listEffect|列表括号内容|#5e5e5e|
+|btnRoute|路由按钮|#c8c8c9|
+|btnRouteForbid|路由禁止|#5d5d5f|
 ||歌词||
 ||歌词选中||
 ||||
@@ -39,6 +41,38 @@
 |-----|-----|-----|
 |headerFooter|顶部底部背景色|#222225|
 |search|搜索栏背景颜色|rgba(255, 255, 255, 0.07)|
+|scrollBar|滚动条颜色|#454545|
 ||||
 ||||
-||||
+
+# header 
+
+|变量|含义|
+|-----|-----|
+|border|边框色|
+
+# footer 
+
+|变量|含义|
+|-----|-----|
+|border|边框色|
+
+# content
+
+|变量|含义|
+|-----|-----|
+|border|边框色|
+|background|背景色|
+
+# playpage
+
+|变量|含义|
+|-----|-----|
+|background|背景色|
+
+# side 右/左侧栏
+
+|变量|含义|
+|-----|-----|
+|||
+

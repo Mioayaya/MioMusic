@@ -6,4 +6,5 @@ interface Iprops extends styles.MStylesProps {
 
 export const MioWebContentLeftDiv = styled.div<Iprops>`  
   height: 0;
+  white-space: nowrap;
 `

@@ -7,8 +7,9 @@ import MioCmPageLoading from "../components/loading/page-loading";
 import MioCmNotFound from "../components/404";
 // mobile
 // web
-import MioWebHome from "../page-web/pages/home";
 import MioWebTest from "../page-web/pages/test";
+import MioWebDiscover from "../page-web/pages/discover";
+import MioWebDiscoverHome from "../page-web/pages/discover/home";
 
 //- 懒加载优化
 const lazyLoad = (children: ReactElement) => {
@@ -24,15 +25,29 @@ export const routes = [
     children: [
       {
         index: true,
-        element: <Navigate to={'/home'} />
+        element: <Navigate to={'/discover/home'} />
+      },
+      {
+        path: '*',
+        element: notFountTSX
+      },
+    ]
+  },
+  {
+    path: '/discover',
+    element: <MioWebDiscover />,
+    children: [
+      {
+        index: true,
+        element: <Navigate to={'/discover/home'} />
       },
       {
         path: '*',
         element: notFountTSX
       },
       {
-        path: '/home',
-        element: assessFlag?lazyLoad(<MioWebHome />):notFountTSX
+        path: '/discover/home',
+        element: assessFlag?lazyLoad(<MioWebDiscoverHome />):notFountTSX
       }
     ]
   },

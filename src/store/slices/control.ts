@@ -4,7 +4,7 @@ import { store } from "../../type";
 export const controlSlice = createSlice({
   name: 'controlSlice',
   initialState: {
-    leftNavKey: '1-1',
+    leftNavKey: '0',
   },
   reducers: {
     setLeftNavKey: (state:store.McontrolSlice,{payload}:{payload:string}) => {
