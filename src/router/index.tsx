@@ -10,6 +10,7 @@ import MioCmNotFound from "../components/404";
 import MioWebTest from "../page-web/pages/test";
 import MioWebDiscover from "../page-web/pages/discover";
 import MioWebDiscoverHome from "../page-web/pages/discover/home";
+import MioWebPleaseLogin from "../page-web/pages/pleaselogin";
 
 //- 懒加载优化
 const lazyLoad = (children: ReactElement) => {
@@ -50,6 +51,10 @@ export const routes = [
         element: assessFlag?lazyLoad(<MioWebDiscoverHome />):notFountTSX
       }
     ]
+  },
+  {
+    path: '/pleaselogin',
+    element: assessFlag?lazyLoad(<MioWebPleaseLogin />):notFountTSX
   },
   {
     path: '/test',

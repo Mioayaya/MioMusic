@@ -6,8 +6,7 @@ interface Props  {
 
 }
 
-const MioWebDiscoverHome : FC<Props> = (props) => {
-  console.log(props)
+const MioWebDiscoverHome : FC<Props> = (props) => {  
   return (
     <MioWebDiscoverHomeDiv>
       233

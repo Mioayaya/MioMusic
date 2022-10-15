@@ -9,6 +9,12 @@ const ThemeColor = {
       unActive:'#afafaf',
       active:'#d0d0d0',
       activeHover:'#ffffff',
+      menuLeft: '#d3d3d3',          // 左侧menu常规颜色
+      menuLeftHover: '#ffffff',     // hover
+      menuLeftactive: '#d2d2d2',    // 选中
+      menuTitle: '#7c7c7c',         // 深色小标题
+      menuTri: '#555555',           // menu三角
+      menuTriHover: '#6b6b6b',    // hover
       icon:'#d2d2d3',
       iconHover:'#ffffff',
       message:'#c33a3b',
@@ -30,7 +36,12 @@ const ThemeColor = {
     public: {
       headerFooter: '#222225',
       search: 'rgba(255, 255, 255, 0.07)',
-      scrollBar: '#454545',      
+      scrollBar: '#454545',
+      menuHover: '#333333',
+      menuActive: '#333333',
+      listEmt: '',
+      listHover: '',
+      listActive: '',
     },
     header: {
       border: `linear-gradient(to left, #660404 0%,#b42424 50%, #660404 100%)`,

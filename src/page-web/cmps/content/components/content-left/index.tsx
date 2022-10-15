@@ -1,5 +1,6 @@
 import { FC, useEffect, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { AnyAction, Dispatch } from '@reduxjs/toolkit';
 import { NavLink } from 'react-router-dom';
 import { Message  } from '@arco-design/web-react';
 
@@ -8,6 +9,8 @@ import { PLEASELOGIN } from '../../../../../server/local-data/page-path';
 
 import { store } from '../../../../../type';
 import { MioWebContentLeftDiv } from './styles'
+import { setLeftNavKey } from '../../../../../store/slices/control';
+
 
 interface IProps  {
   theme: string;
@@ -15,6 +18,7 @@ interface IProps  {
 
 const MioWebContentLeft:FC<IProps> = (props) => {
   const { theme } = props;
+  const dispatch:Dispatch<AnyAction> = useDispatch();
   const IsLogin:boolean = useSelector<store.state,boolean>(state => state.privateSlice.isLogin);
   const NavKey:string = useSelector<store.state,string>(state => state.controlSlice.leftNavKey);
 
@@ -30,6 +34,28 @@ const MioWebContentLeft:FC<IProps> = (props) => {
     return _path;
   }
 
+  const setNavKey = (key:string):void => {
+    dispatch(setLeftNavKey(key));
+  }
+  // React.MouseEvent<HTMLDivElement, MouseEvent>
+  const createListClick = (e:React.MouseEvent<HTMLDivElement,MouseEvent>):void => {
+    const { className } = e.target as HTMLElement;
+    if(className==='add') {      
+      return ;
+    }    
+  }
+
+  const addCreateListClick = (e:React.MouseEvent<HTMLDivElement,MouseEvent>):void => {
+    if(IsLogin) {
+
+    }else {
+      Message.warning('请先登录');
+    }
+    if(e.currentTarget.className === 'create-list') {
+      return ;
+    }
+  }
+
   return (
     <MioWebContentLeftDiv theme={theme}>      
       <div className="top">
@@ -37,8 +63,9 @@ const MioWebContentLeft:FC<IProps> = (props) => {
           leftTopNavKey?.map(item => 
             <NavLink key={item.key}
                      to={toPath(item.path)}
+                     onClick={() => setNavKey(item.key)}
             >
-              <div className="top-nav">
+              <div className={NavKey===item.key?'top-nav top-nav-active':'top-nav'}>
                 {item.name}
               </div>
             </NavLink>
@@ -52,8 +79,9 @@ const MioWebContentLeft:FC<IProps> = (props) => {
           leftBottomNavKey?.map(item =>
             <NavLink key={item.key}
                      to={toPath(item.path,1)}
+                     onClick={() => setNavKey(item.key)}
             >
-              <div className="middle-nav">
+              <div className={NavKey===item.key?'middle-nav middle-nav-active':'middle-nav'}>
                 {item.name}
               </div>
             </NavLink>  
@@ -62,11 +90,16 @@ const MioWebContentLeft:FC<IProps> = (props) => {
       </div>
 
       <div className="bottom">
-        <div className="create-list">创建歌单</div>
-        <div className="collect-list">收藏歌单</div>
-      </div>
-      
-      <button onClick={() => Message.warning('请先登录')}>aleart</button>
+        <div className="create-list" onClick={e => createListClick(e)}>    
+          <h2 className="title">创建歌单</h2>
+          <div className="tri">▶</div>
+          <div className="add" onClick={e => addCreateListClick(e)}>+</div>
+        </div>
+        <div className="collect-list">
+          <h2 className="title">收藏歌单</h2>
+          <div className="tri">▶</div>
+        </div>
+      </div>          
 
     </MioWebContentLeftDiv>
   )

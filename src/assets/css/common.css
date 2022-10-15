@@ -8,6 +8,24 @@
   cursor: not-allowed;
 }
 
+/*
+三角形类的使用：
+- 只需添加 需要方向的颜色 
+  如 想要朝向左侧的三角只需要，border-left-color: #你喜欢的颜色;
+- 底边大小 另外两侧的大小，
+  如 左侧的三角，top和bottom就是调整底边长度 border-top-width: / border-bottom-width
+- 高度是 该侧的大小 border-left-width
+*/
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
 .icon-wrap {
   width: 25px; 
   height: 25px;
