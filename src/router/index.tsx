@@ -9,7 +9,7 @@ import MioCmNotFound from "../components/404";
 // web
 import MioWebTest from "../page-web/pages/test";
 import MioWebDiscover from "../page-web/pages/discover";
-import MioWebDiscoverHome from "../page-web/pages/discover/home";
+import MioWebDiscoverHome from "../page-web/pages/discover/pages/home";
 import MioWebPleaseLogin from "../page-web/pages/pleaselogin";
 
 //- 懒加载优化

@@ -1,5 +1,6 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 import { Link, Outlet } from "react-router-dom";
+import MioWebDiscoverHeader from './components/header';
 
 import { MioWebDiscoverDiv } from './styles';
 
@@ -11,8 +12,8 @@ const MioWebDiscover : FC<Props> = (props) => {
 
   return (
     <MioWebDiscoverDiv> 
-      hhhh
-      <Outlet />
+      <MioWebDiscoverHeader />      
+      <Outlet />      
     </MioWebDiscoverDiv>
   )
 }
