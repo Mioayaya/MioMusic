@@ -44,6 +44,9 @@
 - 方法命名 小驼峰
 - 常量命名 大写
 - 接口命名 M+Name
+- 对于导出文件
+  - utils 后缀 + Methods
+  - type 后缀 + Type
 
 # code
 - import 分为三层，每层空一行

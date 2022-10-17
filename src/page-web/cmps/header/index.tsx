@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 
 
-import { store } from '../../../type';
+import { storeType } from '../../../type';
 import { MioWebHeaderDiv } from "./styles"
 import MioWebHeaderRight from './components/header-right';
 import MioWebHeaderLeft from './components/header-left';
@@ -15,7 +15,7 @@ interface Iprops {
 
 const MioWebHeader:FC<Iprops> = (props) => {
   const { setShowMenu,showMenu } = props;
-  const THEME:string = useSelector<store.state,string>(state => state.themeSlice.theme);  
+  const THEME:string = useSelector<storeType.state,string>(state => state.themeSlice.theme);  
   
   return (
     <MioWebHeaderDiv theme={THEME}>

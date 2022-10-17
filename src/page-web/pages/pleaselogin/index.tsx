@@ -7,12 +7,12 @@ import { NavLink } from 'react-router-dom'
 import { LOGINPATH } from '../../../server/local-data/page-path'
 import ThemeColor from '../../../common/ThemeColor'
 
-import { store, styles } from '../../../type'
+import { storeType, stylesType } from '../../../type'
 import { setLeftNavKeyAway } from '../../../store/slices/control'
 
 
 
-const MioWebPleaseLoginDiv = styled.div<styles.MStylesProps>`
+const MioWebPleaseLoginDiv = styled.div<stylesType.MStylesProps>`
   width: 100%;
   height: 100%;
   display: flex;
@@ -33,7 +33,7 @@ const MioWebPleaseLoginDiv = styled.div<styles.MStylesProps>`
 
 const MioWebPleaseLogin:FC = memo(() => {
   const dispatch:Dispatch<AnyAction> = useDispatch();
-  const THEME:string = useSelector<store.state,string>(state => state.themeSlice.theme);
+  const THEME:string = useSelector<storeType.state,string>(state => state.themeSlice.theme);
   
   useEffect(() => {
     dispatch(setLeftNavKeyAway());

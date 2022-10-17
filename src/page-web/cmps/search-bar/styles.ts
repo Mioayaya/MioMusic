@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import ThemeColor from '../../../common/ThemeColor'
 
-import { styles } from '../../../type'
+import { stylesType } from '../../../type'
 
-export const MioCmSearchBarDiv = styled.div<styles.MStylesProps>`  
+export const MioCmSearchBarDiv = styled.div<stylesType.MStylesProps>`  
   color: ${p => ThemeColor[p.theme]?.font.searchTxt};
   background-color: ${p => ThemeColor[p.theme]?.public.search};
   width: ${p => p.width?`${p.width}px`:'200px'};  

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { assessPage } from './utils'
+import { assessPageMethods } from './utils'
 
 import MioCmNotFound from './components/404';
 import MioCmPageLoading from './components/loading/page-loading';
@@ -11,7 +11,7 @@ function App() {
   const [ pageType,setPageType ] = useState<boolean>(true);
 
   useEffect(() => {
-    setPageType(assessPage.assessPage());
+    setPageType(assessPageMethods.assessPage());
   },[])
 
   return (

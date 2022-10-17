@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 import ThemeColor from '../../common/ThemeColor'
-import { styles } from '../../type'
+import { stylesType } from '../../type'
 
-export const MioCmNotFoundDiv = styled.div<styles.MStylesProps>`
+export const MioCmNotFoundDiv = styled.div<stylesType.MStylesProps>`
   width: 100%;
   height: 100%;
   display: flex;

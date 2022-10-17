@@ -1,6 +1,6 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { store } from '../../../type';
+import { storeType } from '../../../type';
 
 import { MioWebPlayPageDiv } from './styles'
 
@@ -11,7 +11,7 @@ interface IProps  {
 
 const MioWebPlayPage : FC<IProps> = (props) => {
   const { showPlay,setShowPlay } = props;
-  const THEME:string = useSelector<store.state,string>(state => state.themeSlice.theme);
+  const THEME:string = useSelector<storeType.state,string>(state => state.themeSlice.theme);
 
   useEffect(() => {
     

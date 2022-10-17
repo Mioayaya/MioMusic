@@ -2,7 +2,7 @@ import React, { FC, memo, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { discoverNavKey } from '../../../../../server/local-data/nav-key'
-import { styles } from '../../../../../type'
+import { stylesType } from '../../../../../type'
 
 import { MioWebDiscoverHeaderDiv } from './styles'
 
@@ -11,22 +11,20 @@ interface Iprops {
 }
 
 const MioWebDiscoverHeader:FC<Iprops> = memo((props) => {
-  const [ activeKey,setActiveKey ] = useState<string>('0-0');  
-  const [ activeMoveBar,setActiveMoveBar] = useState<styles.MmoveBar>({left:6.4,width:51.2});
-  const [ moveBar,setMoveBar] = useState<styles.MmoveBar>({left:6.4,width:51.2});
+  const [ activeKey,setActiveKey ] = useState<string>('0-0');
+  const [ activeMoveBar,setActiveMoveBar] = useState<stylesType.MmoveBar>({left:6.4,width:51.2});
+  const [ moveBar,setMoveBar] = useState<stylesType.MmoveBar>({left:6.4,width:51.2});
  
   const navMouseClick = (key:string,e:React.MouseEvent<HTMLHeadingElement,MouseEvent>) => {
     const { offsetLeft, clientWidth } = e.currentTarget;
-    const p:styles.MmoveBar = {left:offsetLeft+(clientWidth-10)*0.1,width:(clientWidth-10)*0.8};    
+    const p:stylesType.MmoveBar = {left:offsetLeft+(clientWidth-10)*0.1,width:(clientWidth-10)*0.8};
     setActiveMoveBar(p);
-    setActiveKey(key);        
+    setActiveKey(key);  
   }
   
-  const navMouseEnther = (e:React.MouseEvent<HTMLHeadingElement,MouseEvent>) => {    
+  const navMouseEnther = (e:React.MouseEvent<HTMLHeadingElement,MouseEvent>) => {
     const { offsetLeft, clientWidth } = e.currentTarget;
-    const p:styles.MmoveBar = {left:offsetLeft+(clientWidth-10)*0.1,width:(clientWidth-10)*0.8};
-    console.log(clientWidth,offsetLeft);
-        
+    const p:stylesType.MmoveBar = {left:offsetLeft+(clientWidth-10)*0.1,width:(clientWidth-10)*0.8};        
     setMoveBar(p);
   }
 

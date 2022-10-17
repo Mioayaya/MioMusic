@@ -4,7 +4,7 @@ import { ChangeEvent, FormEvent } from 'react'
 import { MioCmSearchBarDiv } from './styles'
 import MioCMIcon from '../../../components/icon'
 import { useSelector } from 'react-redux'
-import { store } from '../../../type'
+import { storeType } from '../../../type'
 
 interface Iprops {
   width?: number
@@ -13,7 +13,7 @@ interface Iprops {
 const MioCmSearchBar:FC<Iprops> = memo((props) => {
   const { width } = props;
   const [ searchTxt,setSearchTxt ] = useState<string>('');
-  const THEME = useSelector<store.state,string>(state => state.themeSlice.theme);
+  const THEME = useSelector<storeType.state,string>(state => state.themeSlice.theme);
 
   /* methods */
 

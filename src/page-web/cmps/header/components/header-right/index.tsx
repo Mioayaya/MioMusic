@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { AVATAR } from '../../../../../assets/base-img';
 
-import { store } from '../../../../../type';
+import { storeType } from '../../../../../type';
 import { MioWebHeaderRightDiv } from './styles';
 import MioCMIcon from '../../../../../components/icon';
 
@@ -13,7 +13,7 @@ interface IProps  {
 
 const MioWebHeaderRight:FC<IProps> = (props) => {
   const { theme } = props;
-  const IsLogin = useSelector<store.state,boolean>(state => state.privateSlice.isLogin);  
+  const IsLogin = useSelector<storeType.state,boolean>(state => state.privateSlice.isLogin);  
   const [ avatarHover,setAvatarHover ] = useState<boolean>(false);
 
   return (

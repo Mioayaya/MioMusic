@@ -7,7 +7,7 @@ import { Message  } from '@arco-design/web-react';
 import { leftBottomNavKey, leftTopNavKey } from '../../../../../server/local-data/nav-key';
 import { PLEASELOGIN } from '../../../../../server/local-data/page-path';
 
-import { store } from '../../../../../type';
+import { storeType } from '../../../../../type';
 import { MioWebContentLeftDiv } from './styles'
 import { setLeftNavKey } from '../../../../../store/slices/control';
 
@@ -19,8 +19,8 @@ interface IProps  {
 const MioWebContentLeft:FC<IProps> = (props) => {
   const { theme } = props;
   const dispatch:Dispatch<AnyAction> = useDispatch();
-  const IsLogin:boolean = useSelector<store.state,boolean>(state => state.privateSlice.isLogin);
-  const NavKey:string = useSelector<store.state,string>(state => state.controlSlice.leftNavKey);
+  const IsLogin:boolean = useSelector<storeType.state,boolean>(state => state.privateSlice.isLogin);
+  const NavKey:string = useSelector<storeType.state,string>(state => state.controlSlice.leftNavKey);
 
   // methods
   const toPath = (path:string,type?:number):string => {

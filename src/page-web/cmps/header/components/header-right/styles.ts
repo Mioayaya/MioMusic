@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import ThemeColor from "../../../../../common/ThemeColor";
-import { styles } from "../../../../../type";
+import { stylesType } from "../../../../../type";
 
-interface Iprops extends styles.MStylesProps {
+interface Iprops extends stylesType.MStylesProps {
   avatarHover: boolean
 }
 

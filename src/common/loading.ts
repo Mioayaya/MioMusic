@@ -1,6 +1,6 @@
-import { loading } from "../type"
+import { loadingType } from "../type"
 
-export const LOADINGSTR: loading.MLoadingStr[] = [
+export const LOADINGSTR: loadingType.MLoadingStr[] = [
   {
     name: 'N',
     key: 0,

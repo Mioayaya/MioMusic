@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { store } from "../../type";
+import { storeType } from "../../type";
 
 export const controlSlice = createSlice({
   name: 'controlSlice',
@@ -7,10 +7,10 @@ export const controlSlice = createSlice({
     leftNavKey: '0',
   },
   reducers: {
-    setLeftNavKey: (state:store.McontrolSlice,{payload}:{payload:string}) => {
+    setLeftNavKey: (state:storeType.McontrolSlice,{payload}:{payload:string}) => {
       state.leftNavKey = payload;      
     },
-    setLeftNavKeyAway: (state:store.McontrolSlice) => {
+    setLeftNavKeyAway: (state:storeType.McontrolSlice) => {
       state.leftNavKey = '999-999';
     },
     

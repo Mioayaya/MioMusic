@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { store } from "../../type";
+import { storeType } from "../../type";
 
 export const themeSlice = createSlice({
   name: 'themeSlice',
@@ -7,7 +7,7 @@ export const themeSlice = createSlice({
     theme: 'dark',
   },
   reducers: {
-    setTheme: (state:store.MthemeSlice,{payload}:{payload:string}) => {
+    setTheme: (state:storeType.MthemeSlice,{payload}:{payload:string}) => {
       state.theme = payload;
     }
   }

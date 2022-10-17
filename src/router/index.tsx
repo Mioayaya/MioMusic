@@ -1,7 +1,7 @@
 import { ReactElement, Suspense } from "react";
 import { Navigate } from "react-router";
 
-import { assessPage } from "../utils";
+import { assessPageMethods } from "../utils";
 
 import MioCmPageLoading from "../components/loading/page-loading";
 import MioCmNotFound from "../components/404";
@@ -17,7 +17,7 @@ const lazyLoad = (children: ReactElement) => {
   return <Suspense fallback={<MioCmPageLoading />}>{children}</Suspense>;
 };
 
-const assessFlag = assessPage.assessPage();
+const assessFlag = assessPageMethods.assessPage();
 const notFountTSX = lazyLoad(<MioCmNotFound />);
 
 export const routes = [

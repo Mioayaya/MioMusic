@@ -1,6 +1,6 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { store } from '../../../type';
+import { storeType } from '../../../type';
 
 import { MioWebFooterDiv } from './styles';
 
@@ -11,7 +11,7 @@ interface Iprops {
 
 const MioWebFooter : FC<Iprops> = (props) => {
   const { setShowPlay,showPlay } = props;
-  const THEME:string = useSelector<store.state,string>(state => state.themeSlice.theme);
+  const THEME:string = useSelector<storeType.state,string>(state => state.themeSlice.theme);
 
   const audioContext:AudioContext = new window.AudioContext;
   

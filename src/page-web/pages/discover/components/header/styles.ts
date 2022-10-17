@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { styles } from "../../../../../type";
+import { stylesType } from "../../../../../type";
 
-interface Iprops extends styles.MStylesProps {
-  moveBar: styles.MmoveBar
+interface Iprops extends stylesType.MStylesProps {
+  moveBar: stylesType.MmoveBar
 }
 
 export const MioWebDiscoverHeaderDiv = styled.div<Iprops>`  

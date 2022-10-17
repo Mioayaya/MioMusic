@@ -4,7 +4,7 @@ import { useRoutes } from 'react-router-dom'
 
 import { routes } from '../../../router';
 
-import { store } from '../../../type';
+import { storeType } from '../../../type';
 import { MioWebContentDiv } from './styles';
 import MioWebContentLeft from './components/content-left';
 
@@ -17,7 +17,7 @@ interface IProps  {
 
 const MioWebContent : FC<IProps> = (props) => {
   const { showMenu,showPlay,setShowPlay } = props;
-  const THEME:string = useSelector<store.state,string>(state => state.themeSlice.theme);
+  const THEME:string = useSelector<storeType.state,string>(state => state.themeSlice.theme);
 
   return (
     <MioWebContentDiv showMenu={showMenu} theme={THEME}>

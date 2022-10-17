@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { store } from "../../type";
+import { storeType } from "../../type";
 
 
 export const privateSlice = createSlice({
@@ -8,10 +8,10 @@ export const privateSlice = createSlice({
     isLogin: false,
   },
   reducers: {
-    setLogin: (state:store.MprivateSlice) => {
+    setLogin: (state:storeType.MprivateSlice) => {
       state.isLogin = true;
     },
-    setLogout: (state:store.MprivateSlice) => {
+    setLogout: (state:storeType.MprivateSlice) => {
       state.isLogin = false;
     }
   }
