@@ -3,3 +3,8 @@ export interface MStylesProps {
   height?: number;
   theme?: string;
 }
+
+export interface MmoveBar {
+  left: number;
+  width: number;
+}

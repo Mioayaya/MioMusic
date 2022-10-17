@@ -8,11 +8,12 @@ export const controlSlice = createSlice({
   },
   reducers: {
     setLeftNavKey: (state:store.McontrolSlice,{payload}:{payload:string}) => {
-      state.leftNavKey = payload;
+      state.leftNavKey = payload;      
     },
     setLeftNavKeyAway: (state:store.McontrolSlice) => {
       state.leftNavKey = '999-999';
-    }
+    },
+    
   }
 
 });
