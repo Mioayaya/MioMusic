@@ -1,4 +1,5 @@
 import { FC, useEffect, useMemo, useState } from 'react';
+import { HELLOWORDS } from '../../../../../common/sayHello';
 
 import { utilsType } from '../../../../../type';
 import { timesMethods } from '../../../../../utils';
@@ -14,11 +15,12 @@ const MioWebDiscoverHome : FC<Props> = (props) => {
 
   useEffect(() => {
     const ptime = timesMethods.getTimeType();
+    setTimeType(ptime);
   },[])
 
   return (
     <MioWebDiscoverHomeDiv>
-      <div className="h2"></div>
+      <div className="h2">{ timeType&&HELLOWORDS[timeType]}</div>
     </MioWebDiscoverHomeDiv>
   )
 }
