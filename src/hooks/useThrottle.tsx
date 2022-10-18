@@ -6,7 +6,7 @@ interface Iprops {
   deps: any;
 }
 
-const useThrottle = (fn:Function,wait:number,deps:any) => {  
+const useThrottle = (fn:Function,wait:number,deps:any[]) => {  
   const prev = useRef(0);
   
   useEffect(() => {
