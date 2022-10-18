@@ -1,3 +1,9 @@
+export interface McontainRight {
+  scrollTop: number;
+  clientHeight: number;
+}
+
+/******************* */
 export interface MthemeSlice {
   theme: string;
 }
@@ -8,8 +14,10 @@ export interface MprivateSlice {
 
 export interface McontrolSlice {
   leftNavKey: string;
+  containRight: McontainRight;
 }
 
+/********** */
 export interface state {
   themeSlice: MthemeSlice;
   privateSlice: MprivateSlice;
