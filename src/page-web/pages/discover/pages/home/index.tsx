@@ -2,12 +2,13 @@ import { Message } from '@arco-design/web-react';
 import { FC, useEffect, useRef, useState } from 'react';
 
 import { HELLOWORDS } from '../../../../../common/sayHello';
-import { api } from '../../../../../server';
+import api from '../../../../../server';
 import { timesMethods } from '../../../../../utils';
 
-import { utilsType } from '../../../../../type';
+import { resType, songsType, storeType, utilsType } from '../../../../../type';
 import { MioWebDiscoverHomeDiv } from './styles';
 import useImageLazy from '../../../../../hooks/useImageLazy';
+import { useSelector } from 'react-redux';
 
 interface Props  {
 
@@ -20,6 +21,7 @@ const imgList = Array.from(
 );
 
 const MioWebDiscoverHome : FC<Props> = (props) => {
+  const IsLogin = useSelector<storeType.state,boolean>(state => state.privateSlice.isLogin);
   const [ timeType,setTimeType ] = useState<utilsType.MtimeType>();
   const domRef = useRef([]) as any;  
   useImageLazy(domRef.current,30);
@@ -33,9 +35,9 @@ const MioWebDiscoverHome : FC<Props> = (props) => {
   const test = async() => {
     try {
       // const { data,response } = await getSonglistDetail(92);
-      const { data,response } = await api.getSonglistDetail(948471242);
-      data || Message.error(response.status+response.statusText);
-      response || console.log(data);      
+      const { data,response } = await api.discoverHome.getRecommendSongsUnSign() as resType.Mpromise;
+      data || Message.error(response?.status+response!.statusText);
+      response || console.log(data?.result);
     } catch(e:any) {
       Message.error(JSON.stringify(e));
     }
