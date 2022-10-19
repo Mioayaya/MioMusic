@@ -6,7 +6,7 @@ export interface Mresponse {
 export interface MresData {
   category?: number;
   code?: number;
-  result: unknown;
+  result: unknown;  // 取得结果后再断言
 }
 
 // promise缩写为P，recommend缩写为 rmd

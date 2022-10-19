@@ -5,7 +5,7 @@ export const leftTopNavKey:MnavKey[] = [
     name: '发现音乐',
     value: 'discover',
     key: '0',
-    path: '/discover'
+    path: '/discover/home'
   },
   {
     name: '动态',

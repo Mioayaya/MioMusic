@@ -9,10 +9,7 @@ import { resType, songsType, storeType, utilsType } from '../../../../../type';
 import { MioWebDiscoverHomeDiv } from './styles';
 import useImageLazy from '../../../../../hooks/useImageLazy';
 import { useSelector } from 'react-redux';
-
-interface Props  {
-
-}
+import MioWebDhHello from './components/home-hello';
 
 const imgList = Array.from(
   { length: 30 },
@@ -20,10 +17,11 @@ const imgList = Array.from(
     (item = `https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/e08da34488b114bd4c665ba2fa520a31.svg`),
 );
 
-const MioWebDiscoverHome : FC<Props> = (props) => {
-  const IsLogin = useSelector<storeType.state,boolean>(state => state.privateSlice.isLogin);
+const MioWebDiscoverHome : FC = () => {
+  const IsLogin:boolean = useSelector<storeType.state,boolean>(state => state.privateSlice.isLogin);
+  const THEME:string = useSelector<storeType.state,string>(state => state.themeSlice.theme);
   const [ timeType,setTimeType ] = useState<utilsType.MtimeType>();
-  const domRef = useRef([]) as any;  
+  const domRef = useRef([]) as any;
   useImageLazy(domRef.current,30);
 
   useEffect(() => {
@@ -45,7 +43,7 @@ const MioWebDiscoverHome : FC<Props> = (props) => {
 
   return (
     <MioWebDiscoverHomeDiv>
-      <div className="h2">{ timeType&&HELLOWORDS[timeType]}</div>
+      <div className="h2">{ timeType&&HELLOWORDS![timeType] }</div>
 
       {/* 测试 loadImage */}
       <>
@@ -63,10 +61,14 @@ const MioWebDiscoverHome : FC<Props> = (props) => {
           />
         ))}
       </>
-
+      <MioWebDhHello theme={THEME} isLogin={IsLogin}/>
+      <h2>recommend-songs</h2>
+      <h2>推荐songlist</h2>
+      <h2>recommend-singer</h2>
+      <h2>recommend-mv</h2>
     </MioWebDiscoverHomeDiv>
   )
 }
 
-// 子组件缩写为 MioWebDHXxx;
+// 子组件缩写为 MioWebDhXxx;
 export default MioWebDiscoverHome
