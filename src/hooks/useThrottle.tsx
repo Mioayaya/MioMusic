@@ -1,10 +1,4 @@
-import { FC, useEffect, useRef } from 'react';
-
-interface Iprops {
-  fn: Function;
-  wait: number;
-  deps: any;
-}
+import { useEffect, useRef } from 'react';
 
 const useThrottle = (fn:Function,wait:number,deps:any[]) => {  
   const prev = useRef(0);

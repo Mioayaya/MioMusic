@@ -1,14 +1,14 @@
-import { FC, useRef } from 'react';
+import React, { FC, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRoutes } from 'react-router-dom'
+import { AnyAction, Dispatch } from '@reduxjs/toolkit';
 
 import { routes } from '../../../router';
+import { setContainRight } from '../../../store/slices/control';
 
 import { storeType } from '../../../type';
 import { MioWebContentDiv } from './styles';
 import MioWebContentLeft from './components/content-left';
-import { setContainRight } from '../../../store/slices/control';
-
 
 interface IProps  {
   showMenu: boolean;
@@ -18,14 +18,14 @@ interface IProps  {
 
 const MioWebContent : FC<IProps> = (props) => {
   const { showMenu,showPlay,setShowPlay } = props;
-  const dispatch = useDispatch();
+  const dispatch:Dispatch<AnyAction> = useDispatch();
   const THEME:string = useSelector<storeType.state,string>(state => state.themeSlice.theme);  
-  const containRef = useRef() as any;
+  const containRef = useRef( null as null || {} as HTMLDivElement);
 
-  const containScroll = (e:any) => {    
-    const t = e.target.scrollTop;
-    const h = containRef.current.clientHeight;
-    dispatch(setContainRight({scrollTop:t,clientHeight:h}))
+  const containScroll = (e:React.UIEvent<HTMLElement,UIEvent>) => {        
+    const { scrollTop } = e.target as HTMLElement;    
+    const { clientHeight } = containRef.current;
+    dispatch(setContainRight({scrollTop:scrollTop,clientHeight:clientHeight}));
   }
 
   return (
