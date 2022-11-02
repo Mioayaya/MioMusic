@@ -1,3 +1,5 @@
+import { resType } from "..";
+
 export interface McontainRight {
   scrollTop: number;
   clientHeight: number;
@@ -17,9 +19,14 @@ export interface McontrolSlice {
   containRight: McontainRight;
 }
 
+export interface MdiscoveerHomeSlice {
+  songs: resType.songs.MrmdSong[];
+}
+
 /********** */
 export interface state {
   themeSlice: MthemeSlice;
   privateSlice: MprivateSlice;
   controlSlice: McontrolSlice;
+  discoverSlice: MdiscoveerHomeSlice;
 }

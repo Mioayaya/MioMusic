@@ -10,17 +10,16 @@ interface IProps  {
 }
 
 const MioWebDhHello:FC<IProps> = memo((props) => {
+  const { theme } = props;
   
   const timeType = useMemo(() => {
-    console.log(1);
-    
+    console.log(1);    
     return timesMethods.getTimeType();
   },[])
 
   return (
-    <MioWebDhHelloDiv>
-      <h2>Hello World</h2>
-      <h2>{HELLOWORDS[timeType]}</h2>
+    <MioWebDhHelloDiv theme={theme}>
+      <h2>{HELLOWORDS[timeType]}</h2>            
     </MioWebDhHelloDiv>
   )
 })

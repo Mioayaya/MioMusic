@@ -1,3 +1,5 @@
+export * as songs from './songs'
+
 export interface Mresponse {
   status: number;
   statusText: string;

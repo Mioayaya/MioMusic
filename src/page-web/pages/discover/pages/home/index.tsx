@@ -1,7 +1,6 @@
 import { Message } from '@arco-design/web-react';
 import { FC, useEffect, useRef, useState } from 'react';
 
-import { HELLOWORDS } from '../../../../../common/sayHello';
 import api from '../../../../../server';
 import { timesMethods } from '../../../../../utils';
 
@@ -10,6 +9,7 @@ import { MioWebDiscoverHomeDiv } from './styles';
 import useImageLazy from '../../../../../hooks/useImageLazy';
 import { useSelector } from 'react-redux';
 import MioWebDhHello from './components/home-hello';
+import MioWebDhRmdSongs from './components/recommend-songs';
 
 const imgList = Array.from(
   { length: 30 },
@@ -20,14 +20,11 @@ const imgList = Array.from(
 const MioWebDiscoverHome : FC = () => {
   const IsLogin:boolean = useSelector<storeType.state,boolean>(state => state.privateSlice.isLogin);
   const THEME:string = useSelector<storeType.state,string>(state => state.themeSlice.theme);
-  const [ timeType,setTimeType ] = useState<utilsType.MtimeType>();
-  const domRef = useRef([]) as any;
-  useImageLazy(domRef.current,30);
+  const [ isloading, setIsLoading ] = useState<boolean>(true);
+  // const domRef = useRef([]) as any;
+  // useImageLazy(domRef.current,30);
 
-  useEffect(() => {
-    const ptime = timesMethods.getTimeType();
-    setTimeType(ptime);
-    test();
+  useEffect(() => {    
   },[])
 
   const test = async() => {
@@ -42,11 +39,14 @@ const MioWebDiscoverHome : FC = () => {
   }
 
   return (
-    <MioWebDiscoverHomeDiv>
-      <div className="h2">{ timeType&&HELLOWORDS![timeType] }</div>
-
+    <MioWebDiscoverHomeDiv>      
+      <MioWebDhHello theme={THEME} isLogin={IsLogin}/>
+      <MioWebDhRmdSongs theme={THEME} isLogin={IsLogin}/>
+      <h2>推荐songlist</h2>
+      <h2>recommend-singer</h2>
+      <h2>recommend-mv</h2>
       {/* 测试 loadImage */}
-      <>
+      {/* <>
         {imgList.map((item, index) => (
           <img
             ref={(el) => (domRef.current[index] = el)}
@@ -60,12 +60,7 @@ const MioWebDiscoverHome : FC = () => {
             }}
           />
         ))}
-      </>
-      <MioWebDhHello theme={THEME} isLogin={IsLogin}/>
-      <h2>recommend-songs</h2>
-      <h2>推荐songlist</h2>
-      <h2>recommend-singer</h2>
-      <h2>recommend-mv</h2>
+      </> */}
     </MioWebDiscoverHomeDiv>
   )
 }

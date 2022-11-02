@@ -8,7 +8,11 @@ export interface Msong {
 
 // 推荐歌曲
 export interface MrmdSong {
-  test: number;
+  id: number;
+  picUrl: string;
   [keys:string]: any;
+  song:{
+    [keys:string]: any;
+  }
 }
 
